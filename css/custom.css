@@ -1,21 +1,54 @@
+.container-fluid {
+  padding: 0;
+}
+
 body {
   background: #000;
-  color: #FFF;
+  color: #fff;
+}
+
+.main-container {
+  position: relative;
 }
 
 .menu-wrapper {
   text-align: center;
-  padding: 10px;
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: #FFF;
-}
-
-.navbar-default {
+.navbar-custom {
   background: none;
   border: none;
-  color: white;
+  color: #fff;
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar-custom .navbar-nav > li > a {
+  color: #fff;
+}
+
+.navbar-custom:before {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  background: #000;
+  opacity: 0.3;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+}
+
+.navbar-toggle {
+  border: 1px solid #fff;
+  margin-right: 30px;
+}
+
+.navbar-toggle .icon-bar {
+  border-top: 1px solid #fff;
 }
 
 .menu-wrapper ul,
@@ -28,7 +61,7 @@ body {
 }
 
 .menu-wrapper li a {
-  color: white;
+  color: #fff;
 }
 
 .menu-wrapper li a:hover {
@@ -43,14 +76,67 @@ body {
   margin-right: 4px;
 }
 
-.top-background img{
+.container {
+  position: relative;
+}
+
+.jumbotron {
+  background: none;
+  color: #fff;
+  min-height: 400px;
+  margin: 0;
+}
+
+.jumbotron-batman1 {
+  background: url('../img/batman-background.jpg');
+}
+
+.jumbotron-batman1 .contrast-container{
+  float: left;
+}
+
+.jumbotron-batman2 {
+  background: url('../img/batman-background2.jpg');
+  text-align: right;
+}
+
+.jumbotron-batman2 .contrast-container{
+  float: right;
+}
+
+.contrast-container {
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  position: relative;
+}
+
+.contrast-container *{
+  z-index: 2;
+  position: relative;
+}
+
+.contrast-container:after {
   position: absolute;
+  background: #000;
+  opacity: 0.3;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
   z-index: 1;
 }
 
-.container {
-  position: relative;
-  z-index: 2;
+.footer-contents .navbar {
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  font-size: 12px;
+}
+
+.footer-contents .navbar ul li {
+  margin-bottom: 8px;
 }
 
  /*==========  Mobile First Method  ==========*/
@@ -69,8 +155,31 @@ body {
       }
 
       .menu-wrapper .left-menu,
-      .menu-wrapper .rightft-menu {
+      .menu-wrapper .right-menu {
         display: inline-block;
+        position: relative;
+        z-index: 100;
+      }
+
+      .navbar-nav {
+        margin: 0;
+      }
+
+      .navbar-collapse.collapse.in:after {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 81px;
+        content: '';
+        background: #A80000;
+        opacity: .5;
+      }
+
+      .jumbotron-batman1 {
+        padding-top: 140px;
       }
 
     }
@@ -90,12 +199,21 @@ body {
         position: relative;
         left: 0;
       }
+
       .menu-wrapper .left-menu {
         float: left;
       }
 
       .menu-wrapper .right-menu {
         float: right;
+      }
+
+      .jumbotron-batman1 {
+        padding-top: 70px;
+      }
+
+      .navbar-collapse.collapse.in:after {
+        display: none;
       }
     }
 
